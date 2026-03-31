@@ -1,147 +1,248 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senzor unghi mort Edotec</title>
-    <style>
-        body {
-            font-family: -apple-system, sans-serif;
-            color: #000;
-            background-color: #fff;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        h1, h2, h3 {
-            color: #000;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        h2 {
-            font-size: 2em;
-            margin-top: 40px;
-            margin-bottom: 10px;
-        }
-        h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .intro {
-            background-color: #f5f5f5;
-            padding: 15px;
-            margin-bottom: 30px;
-        }
-        img {
-            width: 100%;
-            height: auto;
-            margin-top: 20px;
-        }
-        table {
-            width: 100%;
-            margin-top: 30px;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #f5f5f5;
-            text-align: left;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Senzor unghi mort cu oglindă dedicată | Edotec</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1d1d1f; background: #fff; }
+  section { padding: 80px 24px; max-width: 860px; margin: 0 auto; }
+  section.dark { background: #000; max-width: 100%; padding: 80px 24px; }
+  section.dark > div { max-width: 860px; margin: 0 auto; }
+  section.gray { background: #f5f5f7; max-width: 100%; padding: 80px 24px; }
+  section.gray > div { max-width: 860px; margin: 0 auto; }
+
+  /* HERO */
+  .hero { text-align: center; padding: 100px 24px 60px; }
+  .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 700; letter-spacing: -1px; line-height: 1.1; color: #1d1d1f; }
+  .hero h1 span { color: #555; }
+  .hero p { font-size: clamp(18px, 2.5vw, 24px); color: #555; margin-top: 20px; font-weight: 300; }
+  .hero img { width: 100%; max-width: 720px; margin-top: 50px; border-radius: 18px; }
+
+  /* INTRO */
+  .intro { text-align: center; }
+  .intro p { font-size: 19px; color: #444; line-height: 1.7; max-width: 640px; margin: 0 auto; }
+  .intro p + p { margin-top: 20px; }
+
+  /* FUNCTIE */
+  .feature { display: flex; gap: 60px; align-items: center; }
+  .feature.reverse { flex-direction: row-reverse; }
+  .feature-text { flex: 1; }
+  .feature-text .tag { font-size: 13px; font-weight: 600; color: #e07b00; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .feature-text h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px; }
+  .feature-text h2.white { color: #fff; }
+  .feature-text .tag.white { color: #e07b00; }
+  .feature-text p { font-size: 17px; line-height: 1.7; color: #555; }
+  .feature-text p.white { color: #aaa; }
+  .feature-img { flex: 1; }
+  .feature-img img { width: 100%; border-radius: 14px; }
+
+  /* DIVIDER FULL */
+  .full-feature { text-align: center; }
+  .full-feature .tag { font-size: 13px; font-weight: 600; color: #e07b00; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .full-feature h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 700; margin-bottom: 16px; letter-spacing: -0.5px; }
+  .full-feature h2.white { color: #fff; }
+  .full-feature p { font-size: 17px; color: #555; line-height: 1.7; max-width: 600px; margin: 0 auto 40px; }
+  .full-feature p.white { color: #aaa; }
+  .full-feature img { width: 100%; max-width: 720px; border-radius: 14px; }
+
+  /* KIT */
+  .kit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+  .kit-item { background: #fff; border-radius: 14px; padding: 28px 24px; }
+  .kit-item .icon { font-size: 32px; margin-bottom: 12px; }
+  .kit-item h3 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+  .kit-item p { font-size: 15px; color: #666; line-height: 1.5; }
+
+  /* SPECS */
+  .specs-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+  .specs-table tr { border-bottom: 1px solid #e0e0e0; }
+  .specs-table tr:last-child { border-bottom: none; }
+  .specs-table td { padding: 16px 0; font-size: 16px; }
+  .specs-table td:first-child { color: #888; width: 55%; }
+  .specs-table td:last-child { font-weight: 500; color: #1d1d1f; }
+
+  /* SECTION TITLE */
+  .section-title { text-align: center; margin-bottom: 50px; }
+  .section-title h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 700; letter-spacing: -0.5px; }
+  .section-title h2.white { color: #fff; }
+  .section-title p { font-size: 17px; color: #555; margin-top: 12px; }
+  .section-title p.white { color: #aaa; }
+
+  /* WARNING DUAL */
+  .dual { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .dual-item { border-radius: 14px; padding: 32px; background: #1a1a1a; }
+  .dual-item .icon { font-size: 36px; margin-bottom: 16px; }
+  .dual-item h3 { font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+  .dual-item p { font-size: 15px; color: #888; line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .feature, .feature.reverse { flex-direction: column; }
+    .kit-grid { grid-template-columns: 1fr; }
+    .dual { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Sistem Senzor Unghi Mort</h1>
-        <p>Siguranța. Redefinită.</p>
-    </header>
 
-    <section class="intro">
-        <p>Fii cu un pas înainte. Recunoaște riscurile ascunse. Protejează-ți călătoriile.</p>
-    </section>
+<!-- HERO -->
+<div class="hero">
+  <h1>Schimbă banda.<br><span>Fără nicio grijă.</span></h1>
+  <p>Senzor unghi mort cu oglindă dedicată pentru mașina ta — exact ca din fabrică.</p>
+  <img src="[IMG_OGLINDA]" alt="Oglindă cu senzor unghi mort dedicată">
+</div>
 
-    <section>
-        <h2>BSM</h2>
-        <h3>Monitorizare unghi mort</h3>
-        <p>Detectează vehiculele în zona oarbă. LED-ul integrat în oglindă se aprinde pentru atenționare.</p>
-        <img src="[IMG_BSM]" alt="Monitorizare unghi mort">
-    </section>
+<!-- INTRO -->
+<section class="intro">
+  <p>Unghiul mort există pe orice mașină. Oglinda nu vede tot. Noi am rezolvat asta.</p>
+  <p>Un LED integrat direct în oglinda ta retrovizoare te avertizează în timp real — fără ecrane suplimentare, fără senzori vizibili, fără compromisuri estetice.</p>
+</section>
 
-    <section>
-        <h2>LCA</h2>
-        <h3>Asistență schimbare bandă</h3>
-        <p>Semnalizezi schimbarea benzii? LED-ul clipește și un buzzer te avertizează dacă există un pericol.</p>
+<!-- FUNCTIE 1: BSM -->
+<div style="background:#f5f5f7; padding: 80px 24px;">
+  <div style="max-width:860px; margin:0 auto;">
+    <div class="feature">
+      <div class="feature-text">
+        <div class="tag">Monitorizare unghi mort</div>
+        <h2>Știi când nu poți vedea.</h2>
+        <p>Senzorii radar scanează benzile din lateral. Dacă o mașină intră în unghiul mort, LED-ul din oglindă se aprinde portocaliu instantaneu. Simplu, direct, imposibil de ignorat.</p>
+      </div>
+      <div class="feature-img">
+        <img src="[IMG_BSM]" alt="Monitorizare unghi mort - LED oglindă aprins">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FUNCTIE 2: LCA -->
+<div style="background:#000; padding: 80px 24px;">
+  <div style="max-width:860px; margin:0 auto;">
+    <div class="feature reverse">
+      <div class="feature-text">
+        <div class="tag white">Asistență schimbare bandă</div>
+        <h2 class="white">Semnalizezi. Sistemul veghează.</h2>
+        <p class="white">Activezi semnalizarea și există un vehicul în unghi mort? LED-ul clipește rapid și auzi un semnal sonor. Ai șansa să reacționezi înainte să fie prea târziu.</p>
+      </div>
+      <div class="feature-img">
         <img src="[IMG_LCA]" alt="Asistență schimbare bandă">
-    </section>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <section>
-        <h2>RCTA</h2>
-        <h3>Avertizare trafic lateral la mers înapoi</h3>
-        <p>Mașinile care vin din lateral sunt detectate la mersul înapoi. Fii sigur pe drumul tău.</p>
-        <img src="[IMG_RCTA]" alt="Avertizare trafic lateral">
-    </section>
+<!-- FUNCTIE 3: RCTA -->
+<div style="background:#f5f5f7; padding: 80px 24px;">
+  <div style="max-width:860px; margin:0 auto;">
+    <div class="feature">
+      <div class="feature-text">
+        <div class="tag">Avertizare la mers înapoi</div>
+        <h2>Spatele mașinii are ochi.</h2>
+        <p>Dai înapoi dintr-un loc de parcare și o mașină vine din lateral? Sistemul o detectează și te avertizează vizual și sonor. Acolo unde oglinzile nu ajung, radarul ajunge.</p>
+      </div>
+      <div class="feature-img">
+        <img src="[IMG_RCTA]" alt="Avertizare trafic lateral mers înapoi">
+      </div>
+    </div>
+  </div>
+</div>
 
-    <section>
-        <h2>DOW</h2>
-        <h3>Avertizare deschidere ușă</h3>
-        <p>Nu lăsa surprizele să te prindă pe nepregătite. Avertizare în caz de vehicule apropiate din spate.</p>
+<!-- FUNCTIE 4: DOW -->
+<div style="background:#000; padding: 80px 24px;">
+  <div style="max-width:860px; margin:0 auto;">
+    <div class="feature reverse">
+      <div class="feature-text">
+        <div class="tag white">Avertizare deschidere ușă</div>
+        <h2 class="white">Înainte să deschizi. Nu după.</h2>
+        <p class="white">Mașina e oprită. Ești gata să cobori. Sistemul detectează un vehicul care se apropie din spate și te avertizează înainte să deschizi ușa. Un detaliu mic care poate preveni un accident mare.</p>
+      </div>
+      <div class="feature-img">
         <img src="[IMG_DOW]" alt="Avertizare deschidere ușă">
-    </section>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <section>
-        <h2>Cum te ajută</h2>
-        <ul>
-            <li>🔍 Detectare până la 15 metri</li>
-            <li>💧 Protecție IP6K7K</li>
-            <li>🌡️ Funcționează între -40°C și +85°C</li>
-            <li>🔌 Consum de doar 5W</li>
-        </ul>
-    </section>
+<!-- DUAL WARNING -->
+<div style="background:#111; padding: 80px 24px;">
+  <div style="max-width:860px; margin:0 auto;">
+    <div class="section-title">
+      <h2 class="white">Două moduri de avertizare. Zero scuze.</h2>
+      <p class="white">Sistemul te avertizează simultan — vizual și sonor. Tu alegi pe care îl menții activ.</p>
+    </div>
+    <div class="dual">
+      <div class="dual-item">
+        <div class="icon">🔶</div>
+        <h3>Avertizare vizuală</h3>
+        <p>LED portocaliu integrat direct în oglinda retrovizoare. Aprins continuu sau clipind, în funcție de situație. Vizibil ziua și noaptea.</p>
+      </div>
+      <div class="dual-item">
+        <div class="icon">🔔</div>
+        <h3>Avertizare sonoră</h3>
+        <p>Buzzer integrat în habitaclu. Se activează automat când semnalizezi cu un vehicul în unghi mort sau la mers înapoi. Poate fi dezactivat dacă preferi.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:50px;">
+      <img src="[IMG_WARNING]" alt="Avertizare vizuală și sonoră duală" style="max-width:640px; width:100%; border-radius:14px;">
+    </div>
+  </div>
+</div>
 
-    <section>
-        <h2>Ce primești</h2>
-        <p>🎁 Set 2 oglinzi dedicate (stânga+dreapta) cu LED integrat</p>
-        <p>🧠 Modul control inteligent</p>
-        <p>📡 2 senzori radar avansați</p>
-        <p>🔗 Cablaj complet inclus</p>
-        <img src="[IMG_OGLINDA]" alt="Oglindă dedicată">
-        <img src="[IMG_KIT]" alt="Kit complet">
-    </section>
+<!-- KIT -->
+<div style="background:#f5f5f7; padding: 80px 24px;">
+  <div style="max-width:860px; margin:0 auto;">
+    <div class="section-title">
+      <h2>Tot ce ai nevoie. Nimic în plus.</h2>
+      <p>Kitul vine complet. De la oglindă la ultimul cablu — totul e inclus.</p>
+    </div>
+    <div class="kit-grid">
+      <div class="kit-item">
+        <div class="icon">🪞</div>
+        <h3>Set oglinzi dedicate</h3>
+        <p>Stânga + dreapta, fabricate specific pentru modelul tău de mașină. LED integrat în sticlă, element de încălzire păstrat.</p>
+      </div>
+      <div class="kit-item">
+        <div class="icon">📦</div>
+        <h3>Modul de control</h3>
+        <p>Unitatea centrală care procesează semnalele radar și controlează LED-urile. Se montează discret în habitaclu.</p>
+      </div>
+      <div class="kit-item">
+        <div class="icon">📡</div>
+        <h3>2 senzori radar 24 GHz</h3>
+        <p>Se montează în spatele barei de protecție spate — invizibili din exterior. Rezistență la apă IP6K7K.</p>
+      </div>
+      <div class="kit-item">
+        <div class="icon">🔌</div>
+        <h3>Cablaj complet</h3>
+        <p>Toate cablurile și conectorii necesari pentru instalare. Fără improvizații, fără piese lipsă.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:50px;">
+      <img src="[IMG_KIT]" alt="Kit complet senzor unghi mort" style="max-width:680px; width:100%; border-radius:14px;">
+    </div>
+  </div>
+</div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Specificație</th>
-                <th>Detalii</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tip Radar</td>
-                <td>24 GHz</td>
-            </tr>
-            <tr>
-                <td>Protecție</td>
-                <td>IP6K7K</td>
-            </tr>
-            <tr>
-                <td>Interval Temperatură</td>
-                <td>-40°C la +85°C</td>
-            </tr>
-            <tr>
-                <td>Detecție</td>
-                <td>Până la 15 metri</td>
-            </tr>
-            <tr>
-                <td>Consum Energie</td>
-                <td>5W</td>
-            </tr>
-            <tr>
-                <td>Tensiune Alimentare</td>
-                <td>12V</td>
-            </tr>
-        </tbody>
-    </table>
+<!-- SPECS -->
+<section>
+  <div class="section-title">
+    <h2>Specificații tehnice</h2>
+  </div>
+  <table class="specs-table">
+    <tr><td>Tehnologie radar</td><td>24 GHz microunde</td></tr>
+    <tr><td>Distanță detecție lateral</td><td>până la 15 m</td></tr>
+    <tr><td>Distanță detecție spate</td><td>până la 15 m</td></tr>
+    <tr><td>Unghi detecție lateral</td><td>3 m lățime</td></tr>
+    <tr><td>Rezistență la apă senzori</td><td>IP6K7K</td></tr>
+    <tr><td>Temperatură funcționare</td><td>-40°C până la +85°C</td></tr>
+    <tr><td>Consum maxim</td><td>5W</td></tr>
+    <tr><td>Tensiune alimentare</td><td>12V CC</td></tr>
+    <tr><td>Avertizare vizuală</td><td>LED portocaliu integrat în oglindă</td></tr>
+    <tr><td>Avertizare sonoră</td><td>Buzzer intern, dezactivabil</td></tr>
+    <tr><td>Compatibilitate</td><td>Model dedicat per marcă și generație</td></tr>
+    <tr><td>Element de încălzire oglindă</td><td>Păstrat și funcțional</td></tr>
+    <tr><td>Garanție</td><td>24 luni</td></tr>
+  </table>
+</section>
+
 </body>
 </html>
